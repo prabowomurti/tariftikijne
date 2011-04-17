@@ -7,3 +7,7 @@ Penjelasan isi table:
 - cities_origin_domestic 	: semua kota yang bisa jadi origin, dan berada di Indonesia
 - prices 			: tarif berdasarkan asal kota (dengan code), plus jenis servicenya
 - services			: jenis service (OKE, YES, REG, CCxx)
+
+Untuk hasil jadi, bisa tilik ke http://apps.prabowomurti.com/ongkos-kirim/index.php. Request ongkos kirim dari kota lain silakan via email ke prabowo.murti at gmail.com.
+
+Selamat berjualan! :)
