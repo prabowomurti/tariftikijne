@@ -1,0 +1,9 @@
+=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Ongkos kirim dari beberapa kota ke seluruh kota lain di Indonesia. Dibikin pake simple crawler. Yang ada di sini hanyalah hasilnya (dalam bentuk *.sql). Untuk script mohon maaf belum bisa dipublish (karena malu).
+
+Penjelasan isi table: 
+- cities 			: semua kota (baik yang bisa jadi origin (tempat asal kirim), di Indonesia maupun luar negeri)
+- cities_origin_abroad 		: semua kota yang bisa jadi origin, yang asalnya dari Luar Negeri
+- cities_origin_domestic 	: semua kota yang bisa jadi origin, dan berada di Indonesia
+- prices 			: tarif berdasarkan asal kota (dengan code), plus jenis servicenya
+- services			: jenis service (OKE, YES, REG, CCxx)
