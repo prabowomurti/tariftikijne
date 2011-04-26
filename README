@@ -6,7 +6,20 @@ Penjelasan isi table:
 - cities_origin_abroad 		: semua kota yang bisa jadi origin, yang asalnya dari Luar Negeri
 - cities_origin_domestic 	: semua kota yang bisa jadi origin, dan berada di Indonesia
 - prices 			: tarif berdasarkan asal kota (dengan code), plus jenis servicenya
-- services			: jenis service (OKE, YES, REG, CCxx)
+- services			: jenis service (OKE, YES, REG, CTCxx)
+
+Query berikut bisa digunakan untuk mencari ongkos kirim dari kota XXXXXX ke seluruh kota di Indonesia (koreksi/usulan query yang lebih baik dipersilakan)
+
+SELECT a.city_name AS origin, c.city_name AS destination, service_name, price
+FROM
+        (SELECT * FROM cities_origin_domestic WHERE city_name = "XXXXXX") AS a,
+        prices AS b,
+        cities_origin_domestic AS c,
+        services AS d
+WHERE
+        a.city_code = b.city_code_origin AND
+        b.city_code_destination = c.city_code AND
+        b.service_id = d.service_id
 
 Untuk hasil jadi, bisa tilik ke http://apps.prabowomurti.com/ongkos-kirim/index.php. Request ongkos kirim dari kota lain silakan via email ke prabowo.murti at gmail.com.
 
@@ -15,3 +28,4 @@ Selamat berjualan! :)
 update : 
 18 April 2011, tambah ongkos kirim dari Padang dan Cilegon ke seluruh Indonesia (request bro Tajungkang dan snowrez dari Kaskus)
 21 April 2011, tambah ongkos kirim dari Sukabumi, Medan, dan Solo (request abdann dan johnzz007 dari Kaskus)
+26 April 2011, tambah ongkos kirim dari Batam (request asenk.1 dari Kaskus)
